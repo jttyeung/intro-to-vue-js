@@ -20,22 +20,30 @@
   <script>
 
     var app = new Vue({
+
       el: '#root',
+
+
       data: {
+
         message: 'Hello World!',
         names: ['Joanne', 'Kenny', 'Chat', 'Kelvin']
 
+      },
+
+      mounted() {
+
+        document.querySelector('#addName-button').addEventListener('click', () => {
+
+          let name = document.querySelector('#addName-field');
+          app.names.push(name.value);
+          name.value = '';
+        });
+
       }
-    })
 
+    });
 
-    document.querySelector('#addName-button').addEventListener('click', () => {
-
-      let name = document.querySelector('#addName-field');
-      app.names.push(name.value);
-      name.value = '';
-
-    })
   </script>
 </body>
 </html>
