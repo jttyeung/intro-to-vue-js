@@ -11,8 +11,8 @@
     <ul>
       <li v-for="name in names" v-text="name"></li>
       <br>
-      <input type="text" id="addName-field" v-model="newName">
-      <button v-on:click="addName" id="addName-button">Add Name!</button>
+      <input type="text" v-model="newName">
+      <button v-on:click="addName">Add Name!</button>
     </ul>
   </div>
 
@@ -43,12 +43,6 @@
 
       mounted() {
 
-        // document.querySelector('#addName-button').addEventListener('click', () => {
-
-        //   let name = document.querySelector('#addName-field');
-        //   app.names.push(name.value);
-        //   name.value = '';
-        // });
 
       }
 
