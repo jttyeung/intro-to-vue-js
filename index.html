@@ -13,6 +13,9 @@
       <br>
       <input type="text" v-model="newName">
       <button v-on:click="addName">Add Name!</button>
+      <br>
+      <br>
+      <button @mouseOver="toggleDisabled" :disabled="disabled">Hover Over Me</button>
     </ul>
   </div>
 
@@ -28,7 +31,8 @@
 
         message: 'Hello World!',
         names: ['Joanne', 'Kenny', 'Chat', 'Kelvin'],
-        newName: ''
+        newName: '',
+        disabled: false
 
       },
 
@@ -37,6 +41,10 @@
         addName() {
           this.names.push(this.newName);
           this.newName = '';
+        },
+
+        toggleDisabled() {
+          this.disabled = true;
         }
 
       },
