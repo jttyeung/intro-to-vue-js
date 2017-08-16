@@ -10,19 +10,31 @@
     <p>The value of the input is: {{ message }}</p>
     <ul>
       <li v-for="name in names" v-text="name"></li>
+      <br>
+      <input type="text" id="addName-field">
+      <button id="addName-button">Add Name!</button>
     </ul>
   </div>
 
   <script src="https://unpkg.com/vue"></script>
   <script>
 
-    new Vue({
+    var app = new Vue({
       el: '#root',
       data: {
         message: 'Hello World!',
         names: ['Joanne', 'Kenny', 'Chat', 'Kelvin']
 
       }
+    })
+
+
+    document.querySelector('#addName-button').addEventListener('click', () => {
+
+      let name = document.querySelector('#addName-field');
+      app.names.push(name.value);
+      name.value = '';
+
     })
   </script>
 </body>
